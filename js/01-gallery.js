@@ -22,17 +22,22 @@ gallery.insertAdjacentHTML("beforeend", ` ${imgGallery}`);
 
 
 function onContaiterClick (evt){
-    eve.preventDefault()
-    if(evt.target.classList.contains('gallery__image')){
+    evt.preventDefault()
+    if(!evt.target.classList.contains('gallery__image')){
         return
       } 
       const instance = basicLightbox.create(`
-      <img src="${evt.target.dataset.sourse}">
+      <img src="${evt.target.dataset.source}">
   `)
       console.log(evt.target.dataset.sourse)
-  instance.show()
+      instance.show()
 
 
 }
    
 
+
+// const boxEL = document.querySelector(".box");
+// console.dir(boxEL.classList.contains("container"))
+// boxEL.classList.remove("container")
+// console.dir(boxEL.classList.contains("container"))
