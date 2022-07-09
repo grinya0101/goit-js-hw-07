@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 
 const gallery = document.querySelector(".gallery");
-gallery.addEventListener('click', onContaiterClick)
+
 
 
  
@@ -18,25 +18,7 @@ const imgGallery = galleryItems.map(({preview, original, description}) => {
 
 gallery.insertAdjacentHTML("beforeend", ` ${imgGallery}`);
  
-const lightbox = new SimpleLightbox('.gallery a', {imgGallery});
 
-
-function onContaiterClick (evt){
-    evt.preventDefault()
-   
-    if(!evt.target.classList.contains('gallery__image')){
-        return
-      } 
-      const instance = basicLightbox.create(`
-      <img src="${evt.target.dataset.source}">
-  `)
-      console.log(evt.target.dataset.sourse)
-      instance.show()
-      captionDelay = `alt="${description}"`
-
-     
-}
-   
 const imageСaption = new SimpleLightbox('.gallery a', {
  
     overlayOpacity: 1,
